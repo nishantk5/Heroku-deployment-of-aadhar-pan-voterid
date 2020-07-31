@@ -5,7 +5,7 @@ import pytesseract
 import numpy as np
 import re
 from PIL import Image
-#pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
+pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 def get_dob(txt):
     try:
         match = re.search(r'(\d+/\d+/\d+)',txt)
@@ -29,7 +29,7 @@ def get_name(txt):
         pass
 
 def panocr(img):
-    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+    #pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
     config = ('-l eng --oem 1 --psm 3')
     dim = (550, 400)
     open_cv_image = np.array(img)
